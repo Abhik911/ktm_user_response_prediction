@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>KTM buyer response</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+ <div class="login">
+	<h1 style="color:#fc621d;text-decoration:underline;text-align:center">Predicting if a buyer will buy a KTM bike</h1>
+	
+<img src='https://autowise.com/wp-content/uploads/2018/02/Naked-Bikes-KTM-1290-Super-Duke.jpg' align='left'>
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict"method="post">
+    <label for="age" style="font-weight:bold;text-align:right">Age: </label>
+    <input required type="number" id="age" name="age" min="16" max="70" style="width: 100px;border-radius: 7px; border-color: black;"><br><br><br>
+                
+    <label for="gender" style="font-weight:bold;text-align:right">Gender: </label>
+    <select name="gender" style="width: 100px;border-radius: 7px; border-color: black;">
+    <option value="1" >Male</option>
+    <option value="2">Female</option>
+    </select> <br><br><br>
+
+    <label for="occupation" style="font-weight:bold;text-align:center">Occupation: </label>
+    <select name="occupation" style="width: 100px;border-radius: 7px; border-color: black;">
+    <option value="1" >Professional</option>
+    <option value="2">Self Employed</option>
+	<option value="3" >Student</option>
+    <option value="4">Unemployed</option>
+    </select> <br><br><br>
+         
+    <label for="phone" style="font-weight:bold;text-align:center">Phone Type: </label>
+    <select name="phone" style="width: 100px;border-radius: 7px; border-color: black;">
+    <option value="1" >Average</option>
+    <option value="2">Low End</option>
+	<option value="3" >High End</option>
+    </select> <br><br><br>
+         
+    <label for="bike" style="font-weight:bold;text-align:center">Current Bike: </label>
+    <select name="bike" style="width: 100px;border-radius: 7px; border-color: black;">
+    <option value="1" >220 and Above</option>
+    <option value="2">180 to 220</option>
+	<option value="3" >125 to 180</option>
+	<option value="4" >Below 125</option>
+	<option value="5" >No Bike</option>
+    </select> <br><br><br>
+        
+    <label for="relationship" style="font-weight:bold;text-align:center">Relationship: </label>
+    <select name="relationship" style="width: 100px;border-radius: 7px; border-color: black;">
+    <option value="1">Single</option>
+    <option value="2">Married</option>
+    <option value="3">Committed</option>
+    <option value="4">Complicated</option>
+    </select> <br><br><br>
+        
+            
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="background: yellow;border-radius: 10px;padding: 5px;color: #ggg;width: 15em;    text-transform: uppercase;font-weight: bold;">Click to Predict</button> 
+		
+		<span style="background: green;border-radius: 10px;padding: 5px;color: #fff;width: 25em;"></span>
+	
+          
+        <p id="GFG" style="color: #b78212;border-radius: 10px;padding: 5px;font-weight: bold;font-size: 20px;">  
+            Click below to know whether customer is a 'Genuine Customer' Or 'Window Shopper' 
+        </p> 
+          
+        <input type="button" value="click " onclick="myGeeks()" style="background: grey;border-radius: 10px;padding: 5px;color: #fff;width: 10em;    text-transform: uppercase;font-weight: bold;"> 
+    </div> 
+      
+    <script> 
+        function myGeeks() { 
+            var str = ""; 
+            var matches = parseInt(str.match(/(\d+)/)); 
+			
+			
+              
+            if (matches > 50) { 
+				X = 'Based on our analysis, he is a Genuine Customer'
+             }
+			 else {
+				X = 'Based on our analysis, he is a Window Shopper'
+			 }
+			document.getElementById('GFG').innerHTML 
+                        = X; 
+			
+        } 
+    </script> 
+		
+    </form>
+
+ </div>	
+
+
+</body>
+</html>
